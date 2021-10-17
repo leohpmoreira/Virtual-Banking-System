@@ -1,35 +1,51 @@
 package com.lm.bank;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.control.Button;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class CustomerMenuController {
     @FXML
-    protected void goAddAccount(ActionEvent actionEvent){
-        System.out.println("teste");
+    protected void goAddAccount() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddAccountMenu.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML
-    protected void goDeposito(ActionEvent actionEvent){
+    protected void goDeposito(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CustomerDeposit.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    protected void goSacar(){
 
     }
     @FXML
-    protected void goSacar(ActionEvent actionEvent){
+    protected void goSaldo(){
 
     }
     @FXML
-    protected void goSaldo(ActionEvent actionEvent){
+    protected void goExtrato(){
 
     }
     @FXML
-    protected void goExtrato(ActionEvent actionEvent){
-
-    }
-    @FXML
-    protected void goAlteraSenha(ActionEvent actionEvent){
+    protected void goAlteraSenha(){
 
     }
 }

@@ -1,6 +1,6 @@
 package com.lm.bank;
 
-import javafx.event.ActionEvent;
+
 import com.lm.bank.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,22 +22,21 @@ public class LoginController {
     private Button loginButton;
 
     @FXML
-    protected void login(ActionEvent actionEvent) throws IOException{
+    protected void login() throws IOException{
         String name = userInput.getText();
         String password = passwordInput.getText();
         for (User user : Main.usuario) {
             if (user.authentication(name, password)) {
                 Main.currentUser = user;
-                System.out.println("teste");
                 break;
             }
         }
         Stage atual = (Stage) loginButton.getScene().getWindow();
         atual.close();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/CustomerMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/CustomerMenu.fxml"));
         Stage stage = new Stage();
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(loader.load());
         stage.setScene(scene);
         stage.show();
 

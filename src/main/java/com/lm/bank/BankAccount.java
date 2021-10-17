@@ -54,5 +54,10 @@ public abstract class BankAccount {
         this.transactions.add("\n+" + amount);
     }
 
+    @Override
+    public String toString() {
+        return (accNumber + "\n" + type);
+    }
+
     abstract void withdraw(double amount);
 }
