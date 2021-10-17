@@ -61,8 +61,8 @@ public class CustomerDepositController implements Initializable {
     @FXML
     public void closeDeposit(){
         double valor;
-        Stage stage = okButton.getScene().getWindow();
-        valor = Double.parseDouble(value);
+        Stage stage = (Stage)okButton.getScene().getWindow();
+        valor = Double.parseDouble(value.getText());
         currentAccount.depositar(valor);
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Operacao confirmada");

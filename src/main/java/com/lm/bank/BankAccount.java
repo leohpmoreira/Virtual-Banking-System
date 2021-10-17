@@ -59,5 +59,5 @@ public abstract class BankAccount {
         return (accNumber + "\n" + type);
     }
 
-    abstract void withdraw(double amount);
+    abstract boolean withdraw(double amount);
 }
