@@ -19,4 +19,6 @@ public class Customer extends User {
             case "special" -> accounts.add(new SpecialAccount(this.getName(), "Conta Especial"));
         }
     }
+
+    public List<BankAccount> getAccounts(){return accounts;}
 }

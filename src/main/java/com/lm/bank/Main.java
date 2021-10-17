@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static javafx.application.Application.launch;
 
@@ -22,6 +23,7 @@ public class Main extends Application {
             usuario.add(new Customer("customer1", "customer1", "Customer", "admin"));
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
             Scene scene = new Scene(root);
+            stage.setTitle("Banco Virtual");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
