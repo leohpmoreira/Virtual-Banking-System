@@ -1,6 +1,6 @@
 package com.lm.bank;
 
-import com.lm.bank.Main;
+import com.lm.bank.LoginController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class CustomerDepositController implements Initializable {
-    Customer usuario = (Customer) Main.currentUser;
+    Customer usuario = (Customer) LoginController.user;
     private ObservableList<BankAccount> obsContas;
     private BankAccount currentAccount;
 
@@ -34,7 +34,6 @@ public class CustomerDepositController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        okButton.setDisable(true);
         loadComboBox();
     }
 
@@ -49,11 +48,12 @@ public class CustomerDepositController implements Initializable {
                 }
             }
         });
-        okButton.setDisable(false);
+        if(currentAccount != null)
+            okButton.setDisable(false);
     }
 
     public void loadComboBox(){
-        obsContas = FXCollections.observableArrayList(usuario.getAccounts());
+        obsContas = FXCollections.observableList(usuario.getAccounts());
         comboBox.setItems(obsContas);
     }
 

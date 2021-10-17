@@ -39,7 +39,7 @@ public class CustomerWithdrawnControler implements Initializable {
     @FXML
     public void getInfo(){
         currentAcc = comboBox.getSelectionModel().getSelectedItem();
-        balance = "Saldo Atual: R$" + currentAcc.getBalance();
+        balance.setText("Saldo Atual: R$"+currentAcc.getBalance());
         value.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -62,12 +62,12 @@ public class CustomerWithdrawnControler implements Initializable {
         Alert alert;
         valor = Double.parseDouble(value.getText());
         if (currentAcc.withdraw(valor)){
-            alert.setAlertType(Alert.AlertType.CONFIRMATION);
+            alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setHeaderText("Sucesso");
             alert.setContentText("Operacao de Saque Realizada com sucesso");
         }
         else{
-            alert.setAlertType(Alert.AlertType.ERROR);
+            alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Erro");
             alert.setContentText("Operacao de Saque negada, verifique seu saldo/limite disponivel");
         }

@@ -13,6 +13,7 @@ import java.io.*;
 
 public class LoginController {
     private Stage stage;
+    public static User user;
 
     @FXML
     private TextField userInput;
@@ -34,11 +35,14 @@ public class LoginController {
         Stage atual = (Stage) loginButton.getScene().getWindow();
         atual.close();
 
-        FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/CustomerMenu.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(loader.load());
-        stage.setScene(scene);
-        stage.show();
+        if(Main.currentUser.getType().equals("Cliente")) {
+            this.user = Main.currentUser;
+            FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/CustomerMenu.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.show();
+        }
 
     }
 }

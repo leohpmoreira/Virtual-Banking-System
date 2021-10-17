@@ -1,5 +1,6 @@
 package com.lm.bank;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -8,7 +9,7 @@ public abstract class BankAccount {
     protected String owner;
     protected double balance;
     protected String type;
-    protected List<String> transactions;
+    protected List<String> transactions = new ArrayList<>();
 
     public BankAccount(String owner, String type) {
         this.accNumber = String.valueOf(new Random().nextInt(999_999_999));
