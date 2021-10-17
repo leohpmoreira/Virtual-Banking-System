@@ -1,10 +1,10 @@
 package com.lm.bank;
 
 public abstract class User {
-    private String name;
+    protected String name;
     private String password;
-    private String type;
-    private String manager;
+    private final String type;
+    private final String manager;
 
     public User(String name, String password, String type, String manager) {
         this.name = name;
@@ -15,6 +15,10 @@ public abstract class User {
 
     public String getName() {
         return name;
+    }
+
+    public String getManager() {
+        return manager;
     }
 
     public void setName(String name) {
@@ -33,11 +37,17 @@ public abstract class User {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public boolean authentication (String username, String password){
         return this.name.equals(username) && this.password.equals(password);
+    }
+
+    public void changePassword (String oldPassword, String newPassword){
+        if (this.password.equals(oldPassword)){
+            this.password=newPassword;
+        }
+        else{
+            System.out.println("Senha invalida");
+        }
     }
 }

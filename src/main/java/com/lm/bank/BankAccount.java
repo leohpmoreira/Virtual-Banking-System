@@ -54,5 +54,9 @@ public abstract class BankAccount {
         this.transactions.add("\n+" + amount);
     }
 
+    public String getType() {
+        return type;
+    }
+
     abstract void withdraw(double amount);
 }
