@@ -20,8 +20,8 @@ public class CustomerMenuController{
         loadScene("/CustomerDeposit.fxml");
     }
     @FXML
-    protected void goSacar(){
-
+    protected void goSacar()throws IOException{
+        loadScene("/CustomerWithdrawn.fxml");
     }
     @FXML
     protected void goSaldo() throws IOException {
@@ -29,8 +29,8 @@ public class CustomerMenuController{
     }
 
     @FXML
-    protected void goExtrato(){
-
+    protected void goExtrato() throws IOException{
+        loadScene("/CustomerBankStatement.fxml");
     }
     @FXML
     protected void goAlteraSenha(){

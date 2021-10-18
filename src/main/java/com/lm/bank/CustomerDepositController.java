@@ -61,13 +61,31 @@ public class CustomerDepositController implements Initializable {
     @FXML
     public void closeDeposit(){
         double valor;
-        Stage stage = (Stage)okButton.getScene().getWindow();
-        valor = Double.parseDouble(value.getText());
-        currentAccount.depositar(valor);
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Operacao confirmada");
-        alert.setHeaderText("Sucesso");
-        alert.setContentText("Operacao de Deposito Realizada com sucesso");
+        Stage stage = (Stage) okButton.getScene().getWindow();
+        Alert alert;
+        if(!value.getText().isEmpty()) {
+            valor = Double.parseDouble(value.getText());
+            if(valor>0) {
+                currentAccount.depositar(valor);
+                alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Operacao confirmada");
+                alert.setHeaderText("Sucesso");
+                alert.setContentText("Operacao de Deposito Realizada com sucesso");
+            }
+            else{
+                alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Operacao Interrompida");
+                alert.setHeaderText("Falhou");
+                alert.setContentText("Valor invalido");
+            }
+        }
+        else{
+            alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Operacao Interrompida");
+            alert.setHeaderText("Falhou");
+            alert.setContentText("Valor nao inserido");
+        }
+        alert.showAndWait();
         stage.close();
     }
 
