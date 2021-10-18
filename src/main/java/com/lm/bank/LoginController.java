@@ -43,6 +43,14 @@ public class LoginController {
             stage.setScene(scene);
             stage.show();
         }
+        else{
+            this.user = Main.currentUser;
+            FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/ManagerMenu.fxml"));
+            Stage stage = new Stage();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+            stage.show();
+        }
 
     }
 }

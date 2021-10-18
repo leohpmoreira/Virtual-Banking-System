@@ -19,8 +19,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            users.add(new Manager("admin", "admin", "admin", "admin"));
-            users.add(new Customer("customer1", "customer1", "Customer", "admin"));
+            users.add(new Manager("admin", "admin", "Gerente", "admin"));
+            users.add(new Customer("customer1", "customer1", "Cliente", "admin"));
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
             Scene scene = new Scene(root);
             stage.setTitle("Banco Virtual");

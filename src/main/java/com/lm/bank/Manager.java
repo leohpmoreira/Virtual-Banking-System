@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Manager extends User {
-    //private List<Customer> customers = new ArrayList<>();
 
     public Manager(String name, String password, String type, String manager) {
         super(name, password, type, manager);
@@ -17,15 +16,18 @@ public class Manager extends User {
         }
     }
 
-    public String ownCustomers() {
+    public List<Customer> customersOwned() {
         String names = "";
+        List<Customer> customer = new ArrayList<>();
         for (User user : Main.users) {
             if (user.getManager().equals(this.name) && user.getType().equals("Cliente")) {
-                Customer customer = (Customer) user;
-                names.concat("\n" + user.getName() + customer.getAccounts());
+                customer.add((Customer) user);
             }
         }
-        return names;
+        if(!customer.isEmpty())
+            return customer;
+        else
+            return null;
     }
 
     public void adjustCredit(String customerName, String accNum, double credit) {

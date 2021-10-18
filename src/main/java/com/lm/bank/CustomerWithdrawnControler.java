@@ -60,7 +60,7 @@ public class CustomerWithdrawnControler implements Initializable {
         double valor;
         Alert alert;
         valor = Double.parseDouble(value.getText());
-        if (currentAcc.withdraw(valor) == true){
+        if (currentAcc.testWithdraw(valor) == true){
             alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Sucesso");
             alert.setContentText("Operacao de Saque Realizada com sucesso");

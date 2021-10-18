@@ -67,6 +67,5 @@ public abstract class BankAccount {
         return type;
     }
 
-    abstract void withdraw(double amount);
 
 }

@@ -6,12 +6,13 @@
 <AnchorPane prefHeight="376.0" prefWidth="565.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lm.bank.ManagerMenuController">
    <children>
       <Button layoutX="58.0" layoutY="40.0" mnemonicParsing="false" onAction="#infoUser" prefHeight="47.0" prefWidth="139.0" text="Meus Clientes" />
-      <Button layoutX="58.0" layoutY="130.0" mnemonicParsing="false" onAction="#infoConta" prefHeight="47.0" prefWidth="139.0" text="Verificar Conta" />
-      <Button layoutX="58.0" layoutY="220.0" mnemonicParsing="false" onAction="#applyMoney" prefHeight="47.0" prefWidth="139.0" text="Aplicar dinheiro" />
-      <Button layoutX="58.0" layoutY="310.0" mnemonicParsing="false" onAction="#transfer" prefHeight="47.0" prefWidth="139.0" text="Transferencia" />
+      <Button layoutX="58.0" layoutY="107.0" mnemonicParsing="false" onAction="#infoConta" prefHeight="47.0" prefWidth="139.0" text="Verificar Conta" />
+      <Button layoutX="58.0" layoutY="188.0" mnemonicParsing="false" onAction="#applyMoney" prefHeight="47.0" prefWidth="139.0" text="Aplicar dinheiro" />
+      <Button layoutX="58.0" layoutY="264.0" mnemonicParsing="false" onAction="#transfer" prefHeight="47.0" prefWidth="139.0" text="Transferencia" />
       <Button layoutX="381.0" layoutY="40.0" mnemonicParsing="false" onAction="#withdrawnFromAcc" prefHeight="47.0" prefWidth="139.0" text="Sacar de uma conta" />
-      <Button layoutX="381.0" layoutY="130.0" mnemonicParsing="false" onAction="#editInfo" prefHeight="47.0" prefWidth="139.0" text="Editar Dados da Conta" />
-      <Button layoutX="381.0" layoutY="220.0" mnemonicParsing="false" onAction="#newUser" prefHeight="47.0" prefWidth="139.0" text="Novo Usuario" />
-      <Button layoutX="381.0" layoutY="310.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="47.0" prefWidth="139.0" text="Alterar Senha" />
+      <Button layoutX="381.0" layoutY="107.0" mnemonicParsing="false" onAction="#editInfo" prefHeight="47.0" prefWidth="139.0" text="Editar Dados da Conta" />
+      <Button layoutX="381.0" layoutY="188.0" mnemonicParsing="false" onAction="#newUser" prefHeight="47.0" prefWidth="139.0" text="Novo Usuario" />
+      <Button layoutX="381.0" layoutY="264.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="47.0" prefWidth="139.0" text="Alterar Senha" />
+      <Button fx:id="sair" layoutX="499.0" layoutY="337.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
    </children>
 </AnchorPane>

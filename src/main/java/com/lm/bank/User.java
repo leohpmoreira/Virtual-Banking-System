@@ -1,6 +1,6 @@
 package com.lm.bank;
 
-public abstract class User {
+public class User {
     protected String name;
     private String password;
     private final String type;
@@ -49,5 +49,10 @@ public abstract class User {
         else{
             System.out.println("Senha invalida");
         }
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 }

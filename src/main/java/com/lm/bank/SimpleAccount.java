@@ -7,7 +7,7 @@ public class SimpleAccount extends BankAccount {
     }
 
     @Override
-    boolean withdraw(double amount) {
+    boolean testWithdraw(double amount) {
         if (amount <= this.balance) {
             balance -= amount;
             this.transactions.add("\n-" + amount);
