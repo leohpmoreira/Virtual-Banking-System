@@ -26,7 +26,7 @@ public class LoginController {
     protected void login() throws IOException{
         String name = userInput.getText();
         String password = passwordInput.getText();
-        for (User user : Main.usuario) {
+        for (User user : Main.users) {
             if (user.authentication(name, password)) {
                 Main.currentUser = user;
                 break;
