@@ -20,11 +20,9 @@ public class Customer extends User {
         }
     }
 
-    public String getAccounts() {
-        String str = "";
-        for (BankAccount account : this.accounts) {
-            str.concat("Número da conta: " + account.getAccNumber() + "\nTipo: " + account.getType() + "\nSaldo: R$" + account.getBalance() + "\nTransações: " + account.getTransactions() + "\n");
-        }
-        return str;
+
+    public List<BankAccount> getAccounts(){
+        return accounts;
     }
+
 }

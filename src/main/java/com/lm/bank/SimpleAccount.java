@@ -7,13 +7,14 @@ public class SimpleAccount extends BankAccount {
     }
 
     @Override
-    void withdraw(double amount) {
+    boolean withdraw(double amount) {
         if (amount <= this.balance) {
             balance -= amount;
             this.transactions.add("\n-" + amount);
+            return true;
         }
         else{
-            System.out.println("Saldo insuficiente");
+            return false;
         }
     }
 }

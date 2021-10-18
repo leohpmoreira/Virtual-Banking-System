@@ -16,13 +16,20 @@ public class SpecialAccount extends BankAccount {
     }
 
     @Override
-    void withdraw(double amount) {
+    boolean withdraw(double amount) {
         if (amount <= this.balance+credit) {
-            balance -= amount;
+            if(amount > this.balance){
+                this.balance = 0;
+                this.credit = credit - (amount - balance);
+            }
+            else{
+                this.balance = balance - amount;
+            }
             this.transactions.add("\n-" + amount);
+            return true;
         }
         else{
-            System.out.println("Saldo insuficiente");
+            return false;
         }
     }
 }
