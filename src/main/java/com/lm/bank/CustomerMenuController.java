@@ -33,8 +33,8 @@ public class CustomerMenuController{
         loadScene("/CustomerBankStatement.fxml");
     }
     @FXML
-    protected void goAlteraSenha(){
-
+    protected void goAlteraSenha()throws IOException{
+        loadScene("/UserChangePassword.fxml");
     }
 
     private void loadScene(String path) throws IOException {

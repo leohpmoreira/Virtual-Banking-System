@@ -61,17 +61,16 @@ public class CustomerWithdrawnControler implements Initializable {
         Alert alert;
         valor = Double.parseDouble(value.getText());
         if (currentAcc.withdraw(valor) == true){
-            alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Sucesso");
             alert.setContentText("Operacao de Saque Realizada com sucesso");
-            alert.showAndWait();
         }
         else{
             alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Erro");
             alert.setContentText("Operacao de Saque negada, verifique seu saldo/limite disponivel");
-            alert.showAndWait();
         }
+        alert.showAndWait();
         stage.close();
     }
 }
