@@ -5,6 +5,7 @@ public class SpecialAccount extends BankAccount {
 
     public SpecialAccount(String owner, String type) {
         super(owner, type);
+        this.credit = 0;
     }
 
     public double getCredit() {

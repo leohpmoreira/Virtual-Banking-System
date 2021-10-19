@@ -1,5 +1,6 @@
 package com.lm.bank;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import java.util.ResourceBundle;
 
 public class ManagerInfoUserController implements Initializable {
     private Manager current_user = (Manager) LoginController.user;
+    public static BankAccount userAcc;
 
     @FXML
     private ComboBox<Customer> clientes;
@@ -31,8 +33,6 @@ public class ManagerInfoUserController implements Initializable {
     @FXML
     void getClientes() throws IOException{
         loadConta();
-        if(contas != null)
-            contas.setDisable(false);
     }
 
 
@@ -40,8 +40,8 @@ public class ManagerInfoUserController implements Initializable {
     void close() throws IOException{
         Stage atual = (Stage) okButton.getScene().getWindow();
         FXMLLoader loader = null;
-        BankAccount conta = contas.getSelectionModel().getSelectedItem();
-        switch (conta.getType()){
+        userAcc = contas.getSelectionModel().getSelectedItem();
+        switch (userAcc.getType()){
             case "Conta Poupança" -> loader = new FXMLLoader(ManagerInfoUserController.class.getResource("/EditInterest.fxml"));
             case "Conta Especial" -> loader = new FXMLLoader(ManagerInfoUserController.class.getResource("/EditLimit.fxml"));
 
@@ -68,7 +68,6 @@ public class ManagerInfoUserController implements Initializable {
     }
 
     void loadConta() throws IOException{
-        contas = null;
         Customer client = clientes.getSelectionModel().getSelectedItem();
         List<BankAccount> cl_contas = new ArrayList<>();
         for(BankAccount account : client.getAccounts()){

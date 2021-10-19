@@ -1,11 +1,13 @@
 package com.lm.bank;
 
 public class SavingsAccount extends SimpleAccount {
+    private double Interest;
+
     public SavingsAccount(String owner, String type) {
         super(owner, type);
+        this.Interest = 0;
     }
 
-    private double Interest;
 
     public double getInterest() {
         return Interest;

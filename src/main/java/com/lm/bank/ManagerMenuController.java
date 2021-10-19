@@ -18,7 +18,7 @@ public class ManagerMenuController {
 
     @FXML
     void infoUser()throws IOException{
-        loadScene(".fxml");
+        loadScene("/InfoUser.fxml");
     }
 
     @FXML
@@ -28,7 +28,7 @@ public class ManagerMenuController {
 
     @FXML
     void applyMoney()throws IOException{
-        loadScene(".fxml");
+        loadScene("/ApplyMoney.fxml");
     }
 
     @FXML
@@ -38,7 +38,7 @@ public class ManagerMenuController {
 
     @FXML
     void withdrawnFromAcc()throws IOException{
-        loadScene(".fxml");
+        loadScene("/ManagerWithdrawn.fxml");
     }
 
     @FXML
