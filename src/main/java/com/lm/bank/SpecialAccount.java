@@ -19,13 +19,7 @@ public class SpecialAccount extends BankAccount {
     @Override
     boolean testWithdraw(double amount) {
         if (amount <= this.balance+credit) {
-            if(amount > this.balance){
-                this.balance = 0;
-                this.credit = credit - (amount - balance);
-            }
-            else{
                 this.balance = balance - amount;
-            }
             this.transactions.add("\n-" + amount);
             return true;
         }

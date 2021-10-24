@@ -10,6 +10,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,10 +50,12 @@ public class ManagerNewUserController implements Initializable {
             switch (userType.getSelectionModel().getSelectedItem()){
                 case "Manager" -> {
                     Manager novo = new Manager(username.getText(),password.getText(),"Gerente",current_user.getName());
+                    writeFile(novo,"Gerente");
                     Main.users.add(novo);
                 }
                 case "Customer" -> {
                     Customer novo = new Customer (username.getText(),password.getText(),"Cliente",current_user.getName());
+                    writeFile(novo,"Cliente");
                     Main.users.add(novo);
                 }
             }
@@ -70,6 +76,22 @@ public class ManagerNewUserController implements Initializable {
         type.add("Customer");
         obsType = FXCollections.observableList(type);
         userType.setItems(obsType);
+    }
+
+    void writeFile(User user,String tipo){
+        File arquivo = new File ("users.txt");
+        try{
+            if(!arquivo.exists()){
+                arquivo.createNewFile();
+            }
+
+            BufferedWriter dataW = new BufferedWriter(new FileWriter(arquivo,true));
+            dataW.write(user.getName() + "-" + user.getPassword() + "-" + user.getType() + "-" + user.getManager());
+            dataW.newLine();
+            dataW.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
 

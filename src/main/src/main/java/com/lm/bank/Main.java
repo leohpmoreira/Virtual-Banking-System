@@ -20,7 +20,7 @@ public class Main extends Application {
         try {
             users.add(new Manager("admin", "admin", "admin", "admin"));
             users.add(new Customer("customer1", "customer1", "Customer", "admin"));
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Test/Login.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

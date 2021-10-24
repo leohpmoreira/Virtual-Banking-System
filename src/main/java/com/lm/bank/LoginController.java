@@ -1,10 +1,8 @@
 package com.lm.bank;
 
 
-import com.lm.bank.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -37,7 +35,7 @@ public class LoginController {
 
         if(Main.currentUser.getType().equals("Cliente")) {
             this.user = Main.currentUser;
-            FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/CustomerMenu.fxml"));
+            FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/Customer/CustomerMenu.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);

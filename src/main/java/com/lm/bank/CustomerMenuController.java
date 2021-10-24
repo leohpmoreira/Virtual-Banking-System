@@ -3,7 +3,6 @@ package com.lm.bank;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -45,7 +44,7 @@ public class CustomerMenuController{
     @FXML
     void sair() throws IOException{
         Stage atual = (Stage) sair.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Test/Login.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(loader.load());
         stage.setScene(scene);

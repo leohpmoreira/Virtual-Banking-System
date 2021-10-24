@@ -23,7 +23,7 @@ public class ManagerMenuController {
 
     @FXML
     void infoConta()throws IOException{
-        loadScene(".fxml");
+        loadScene("/infoConta.fxml");
     }
 
     @FXML
@@ -59,7 +59,7 @@ public class ManagerMenuController {
     @FXML
     void sair() throws IOException{
         Stage atual = (Stage) sair.getScene().getWindow();
-        loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+        loader = new FXMLLoader(getClass().getResource("/Test/Login.fxml"));
         stage = new Stage();
         scene = new Scene(loader.load());
         stage.setScene(scene);
