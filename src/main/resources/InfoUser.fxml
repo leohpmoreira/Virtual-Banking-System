@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="337.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lm.bank.InfoUserController">
+<AnchorPane prefHeight="337.0" prefWidth="487.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.controllers.InfoUserController">
    <children>
       <ListView fx:id="contas" layoutX="244.0" layoutY="40.0" prefHeight="240.0" prefWidth="216.0" />
       <ComboBox fx:id="clientes" layoutX="33.0" layoutY="40.0" onAction="#getBox" prefWidth="150.0" />

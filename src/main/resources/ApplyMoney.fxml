@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="233.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lm.bank.ApplyMoneyController">
+<AnchorPane prefHeight="233.0" prefWidth="429.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.controllers.ApplyMoneyController">
    <children>
       <ComboBox fx:id="cliente" layoutX="14.0" layoutY="38.0" onAction="#getCliente" prefWidth="150.0" />
       <ComboBox fx:id="conta" layoutX="232.0" layoutY="38.0" prefWidth="150.0" />

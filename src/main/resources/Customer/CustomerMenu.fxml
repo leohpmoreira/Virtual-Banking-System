@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lm.bank.CustomerMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.controllers.CustomerMenuController">
    <children>
       <Button layoutX="66.0" layoutY="40.0" mnemonicParsing="false" onAction="#goAddAccount" prefHeight="60.0" prefWidth="160.0" text="Adicionar Conta" />
       <Button layoutX="66.0" layoutY="140.0" mnemonicParsing="false" onAction="#goDeposito" prefHeight="60.0" prefWidth="160.0" text="Depositar" />

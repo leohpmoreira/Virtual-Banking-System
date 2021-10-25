@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="364.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lm.bank.InfoContaController">
+<AnchorPane prefHeight="364.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.controllers.InfoContaController">
    <children>
       <ListView fx:id="transaction" layoutX="250.0" layoutY="29.0" prefHeight="286.0" prefWidth="229.0" />
       <ComboBox fx:id="conta" layoutX="14.0" layoutY="36.0" onAction="#getCombo" prefWidth="150.0" promptText="Selecionar Conta" />
