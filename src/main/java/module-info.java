@@ -9,6 +9,8 @@ module com.example.bank {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens com.lm.bank to javafx.fxml;
-    exports com.lm.bank;
+    opens com.lmfk.bank to javafx.fxml;
+    exports com.lmfk.bank;
+    exports com.lmfk.bank.controllers;
+    opens com.lmfk.bank.controllers to javafx.fxml;
 }

@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="376.0" prefWidth="565.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lm.bank.ManagerMenuController">
+<AnchorPane prefHeight="376.0" prefWidth="565.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.controllers.ManagerMenuController">
    <children>
       <Button layoutX="58.0" layoutY="40.0" mnemonicParsing="false" onAction="#infoUser" prefHeight="47.0" prefWidth="139.0" text="Meus Clientes" />
       <Button layoutX="58.0" layoutY="107.0" mnemonicParsing="false" onAction="#infoConta" prefHeight="47.0" prefWidth="139.0" text="Verificar Conta" />
