@@ -33,26 +33,25 @@ public class LoginController {
             }
         }
         Stage atual = (Stage) loginButton.getScene().getWindow();
-        atual.close();
-
-        if (Main.currentUser.getType().equals("Cliente")) {
-            this.user = Main.currentUser;
-            FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/Customer/CustomerMenu.fxml"));
-            Stage stage = new Stage();
-            Scene scene = new Scene(loader.load());
-            stage.setScene(scene);
-            stage.show();
-        } else {
-            if (Main.currentUser.getType().equals("Gerente")) {
+        if(Main.currentUser != null){
+            if (Main.currentUser.getType().equals("Cliente")) {
                 this.user = Main.currentUser;
-                FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/Manager/ManagerMenu.fxml"));
+                FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/Customer/CustomerMenu.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(loader.load());
                 stage.setScene(scene);
                 stage.show();
-            } else
-                return;
+            } else {
+                if (Main.currentUser.getType().equals("Gerente")) {
+                    this.user = Main.currentUser;
+                    FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/Manager/ManagerMenu.fxml"));
+                    Stage stage = new Stage();
+                    Scene scene = new Scene(loader.load());
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            }
+            atual.close();
         }
-
     }
 }

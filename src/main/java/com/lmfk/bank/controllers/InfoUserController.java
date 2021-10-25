@@ -42,9 +42,7 @@ public class InfoUserController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        loadBox();
-    }
+    public void initialize(URL location, ResourceBundle resources) {loadBox();}
 
     void loadBox() {
         ObservableList<Customer> obsCli = FXCollections.observableList(current.customersOwned());
