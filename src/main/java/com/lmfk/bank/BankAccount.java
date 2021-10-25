@@ -61,7 +61,7 @@ public abstract class BankAccount {
         return (accNumber + "\n" + type);
     }
 
-    abstract boolean testWithdraw(double amount);
+    public abstract boolean testWithdraw(double amount);
 
     public String getType() {
         return type;

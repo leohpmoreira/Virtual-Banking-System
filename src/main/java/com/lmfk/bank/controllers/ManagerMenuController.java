@@ -33,7 +33,7 @@ public class ManagerMenuController {
 
     @FXML
     void transfer() throws IOException {
-        loadScene(".fxml");
+        loadScene("/Manager/Transfer.fxml");
     }
 
     @FXML
@@ -72,7 +72,7 @@ public class ManagerMenuController {
         stage = new Stage();
         scene = new Scene(loader.load());
         stage.setScene(scene);
-        stage.show();
+        stage.showAndWait();
     }
 
 }
