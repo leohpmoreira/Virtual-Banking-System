@@ -1,4 +1,4 @@
 # Virtual-Bank
-Fabio Auchan Kanashiro
+Banking system built using JavaFX for the course Paradigmas de Programação B. 
 
-Leonardo Kauan Hirano Pereira Moreira
+Made by Fabio Auchan Kanashiro and Leonardo Kauan H. P. Moreira.
