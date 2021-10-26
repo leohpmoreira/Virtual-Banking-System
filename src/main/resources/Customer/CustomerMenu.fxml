@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.controllers.CustomerMenuController">
+   <children>
+      <Button layoutX="66.0" layoutY="40.0" mnemonicParsing="false" onAction="#goAddAccount" prefHeight="60.0" prefWidth="160.0" text="Adicionar Conta" />
+      <Button layoutX="66.0" layoutY="140.0" mnemonicParsing="false" onAction="#goDeposito" prefHeight="60.0" prefWidth="160.0" text="Depositar" />
+      <Button layoutX="66.0" layoutY="240.0" mnemonicParsing="false" onAction="#goSacar" prefHeight="60.0" prefWidth="160.0" text="Sacar" />
+      <Button layoutX="374.0" layoutY="140.0" mnemonicParsing="false" onAction="#goExtrato" prefHeight="60.0" prefWidth="160.0" text="Extrato" />
+      <Button layoutX="374.0" layoutY="240.0" mnemonicParsing="false" onAction="#goAlteraSenha" prefHeight="60.0" prefWidth="160.0" text="Alterar Senha" />
+      <Button layoutX="374.0" layoutY="40.0" mnemonicParsing="false" onAction="#goSaldo" prefHeight="60.0" prefWidth="160.0" text="Verificar Saldo" />
+      <Button fx:id="sair" layoutX="508.0" layoutY="347.0" mnemonicParsing="false" onAction="#sair" prefHeight="26.0" prefWidth="70.0" text="Sair" />
+   </children>
+</AnchorPane>
