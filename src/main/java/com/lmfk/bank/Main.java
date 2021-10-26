@@ -1,5 +1,7 @@
 package com.lmfk.bank;
 
+import com.lmfk.bank.service.Encryption;
+import com.lmfk.bank.service.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,8 +10,6 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static javafx.application.Application.launch;
 
 public class Main extends Application {
     public static List<User> users = new ArrayList<>();

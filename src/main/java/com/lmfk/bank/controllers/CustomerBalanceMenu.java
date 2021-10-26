@@ -8,29 +8,29 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CustomerBankStatementController implements Initializable {
-    private final Customer current = (Customer) LoginController.user;
-
-    @FXML
-    private ComboBox<BankAccount> comboBox;
+public class CustomerBalanceMenu implements Initializable {
+    private ObservableList<BankAccount> obsBankAcc;
+    private BankAccount current;
 
     @FXML
     private Button close;
 
     @FXML
-    private ListView<String> listView;
+    private ComboBox<BankAccount> comboBox;
 
     @FXML
-    void getInfo() {
-        BankAccount currentAcc = comboBox.getSelectionModel().getSelectedItem();
-        ObservableList<String> obsTransactions = FXCollections.observableList(currentAcc.getTransactions());
-        listView.setItems(obsTransactions);
+    private Label balance;
+
+    @FXML
+    void getComboBox() {
+        current = comboBox.getSelectionModel().getSelectedItem();
+        balance.setText("Saldo Atual: R$" + current.getBalance());
     }
 
     @FXML
@@ -45,7 +45,7 @@ public class CustomerBankStatementController implements Initializable {
     }
 
     void loadComboBox() {
-        ObservableList<BankAccount> obsBank = FXCollections.observableList(current.getAccounts());
-        comboBox.setItems(obsBank);
+        obsBankAcc = FXCollections.observableList(((Customer) LoginController.user).getAccounts());
+        comboBox.setItems(obsBankAcc);
     }
 }

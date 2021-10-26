@@ -15,7 +15,7 @@ public class CustomerMenuController {
 
     @FXML
     protected void goAddAccount(ActionEvent e) throws IOException {
-        loadScene("/AddAccountMenu.fxml");
+        loadScene("/User/AddAccountMenu.fxml");
     }
 
     @FXML

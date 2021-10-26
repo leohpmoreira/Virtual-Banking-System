@@ -1,13 +1,13 @@
 package com.lmfk.bank.controllers;
 
-import com.lmfk.bank.Customer;
+import com.lmfk.bank.service.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 
 public class AddAccountMenuController {
-    private Customer currentCust = (Customer) LoginController.user;
+    private final Customer currentCust = (Customer) LoginController.user;
 
     @FXML
     public void newSimple(ActionEvent e) {
@@ -16,13 +16,15 @@ public class AddAccountMenuController {
     }
 
     @FXML
-    public void newSaving() {
+    public void newSaving(ActionEvent e) {
         currentCust.newAccount("savings");
+        closeWindow(e);
     }
 
     @FXML
-    public void newSpecial() {
+    public void newSpecial(ActionEvent e) {
         currentCust.newAccount("special");
+        closeWindow(e);
     }
 
     void closeWindow(ActionEvent e) {

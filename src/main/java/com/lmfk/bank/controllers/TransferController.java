@@ -1,6 +1,10 @@
 package com.lmfk.bank.controllers;
 
-import com.lmfk.bank.*;
+import com.lmfk.bank.Main;
+import com.lmfk.bank.service.BankAccount;
+import com.lmfk.bank.service.Customer;
+import com.lmfk.bank.service.Manager;
+import com.lmfk.bank.service.User;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -19,7 +23,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class TransferController implements Initializable {
-    private Manager user = (Manager) Main.currentUser;
+    private final Manager user = (Manager) Main.currentUser;
     private BankAccount accScr;
     private BankAccount accDest;
 
@@ -47,17 +51,17 @@ public class TransferController implements Initializable {
         loadBox1();
     }
 
-    void loadBox1(){
+    void loadBox1() {
         ObservableList<Customer> obsCust = FXCollections.observableList(user.customersOwned());
         sourceClient.setItems(obsCust);
     }
 
     @FXML
-    void loadBox2(){
+    void loadBox2() {
         List<Customer> customers = new ArrayList<>();
         Customer source = sourceClient.getSelectionModel().getSelectedItem();
-        for(User user : Main.users){
-            if(user.getType().equals("Cliente") && !(user.getName().equals(source.getName())) )
+        for (User user : Main.users) {
+            if (user.getType().equals("Cliente") && !(user.getName().equals(source.getName())))
                 customers.add((Customer) user);
         }
         ObservableList<Customer> obsCust = FXCollections.observableList(customers);
@@ -68,7 +72,7 @@ public class TransferController implements Initializable {
     }
 
     @FXML
-    void loadBox3(){
+    void loadBox3() {
         Customer destination = destinationClient.getSelectionModel().getSelectedItem();
 
         ObservableList<BankAccount> obsBank = FXCollections.observableList(destination.getAccounts());
@@ -76,7 +80,7 @@ public class TransferController implements Initializable {
     }
 
     @FXML
-    void getValue(){
+    void getValue() {
         transferAmount.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -88,20 +92,19 @@ public class TransferController implements Initializable {
     }
 
     @FXML
-    void transferir(){
+    void transferir() {
         Double valor = Double.parseDouble(transferAmount.getText());
         Alert alert = null;
         Stage stage = (Stage) transferButton.getScene().getWindow();
         accScr = sourceAccount.getSelectionModel().getSelectedItem();
         accDest = destinationAccount.getSelectionModel().getSelectedItem();
-        if(accScr.testWithdraw(valor)){
+        if (accScr.testWithdraw(valor)) {
             accDest.depositar(valor);
-            alert  = new Alert(Alert.AlertType.INFORMATION);
+            alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Sucesso");
             alert.setContentText("Operacao realizada con sucesso");
-        }
-        else{
-            alert  = new Alert(Alert.AlertType.ERROR);
+        } else {
+            alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Erro");
             alert.setContentText("Opercao cancelada, verifique seu saldo/limite");
         }

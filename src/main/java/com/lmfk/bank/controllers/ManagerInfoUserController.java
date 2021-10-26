@@ -1,9 +1,9 @@
 package com.lmfk.bank.controllers;
 
 
-import com.lmfk.bank.BankAccount;
-import com.lmfk.bank.Customer;
-import com.lmfk.bank.Manager;
+import com.lmfk.bank.service.BankAccount;
+import com.lmfk.bank.service.Customer;
+import com.lmfk.bank.service.Manager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ManagerInfoUserController implements Initializable {
-    private Manager current_user = (Manager) LoginController.user;
+    private final Manager current_user = (Manager) LoginController.user;
     public static BankAccount userAcc;
 
     @FXML

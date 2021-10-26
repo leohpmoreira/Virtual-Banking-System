@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="364.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.controllers.InfoContaController">
+   <children>
+      <ListView fx:id="transaction" layoutX="250.0" layoutY="29.0" prefHeight="286.0" prefWidth="229.0" />
+      <ComboBox fx:id="conta" layoutX="14.0" layoutY="36.0" onAction="#getCombo" prefWidth="150.0" promptText="Selecionar Conta" />
+      <Label fx:id="info" layoutX="14.0" layoutY="83.0" prefHeight="116.0" prefWidth="150.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="close" layoutX="407.0" layoutY="325.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="72.0" text="Close" />
+   </children>
+</AnchorPane>

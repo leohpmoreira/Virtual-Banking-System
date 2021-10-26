@@ -1,6 +1,6 @@
 package com.lmfk.bank.controllers;
 
-import com.lmfk.bank.SpecialAccount;
+import com.lmfk.bank.service.SpecialAccount;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EditLimitController implements Initializable {
-    private SpecialAccount current = (SpecialAccount) ManagerInfoUserController.userAcc;
+    private final SpecialAccount current = (SpecialAccount) ManagerInfoUserController.userAcc;
 
     @FXML
     private Button okButton;

@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="196.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.CustomerBalanceMenu">
+<AnchorPane prefHeight="196.0" prefWidth="408.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lmfk.bank.controllers.CustomerBalanceMenu">
    <children>
       <Label fx:id="balance" layoutX="73.0" layoutY="65.0" prefHeight="64.0" prefWidth="232.0" text="Saldo Atual: R$" />
       <ComboBox fx:id="comboBox" layoutX="14.0" layoutY="28.0" onAction="#getComboBox" prefWidth="150.0" promptText="Selecionar Conta" />

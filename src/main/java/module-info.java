@@ -13,4 +13,6 @@ module com.example.bank {
     exports com.lmfk.bank;
     exports com.lmfk.bank.controllers;
     opens com.lmfk.bank.controllers to javafx.fxml;
+    exports com.lmfk.bank.service;
+    opens com.lmfk.bank.service to javafx.fxml;
 }

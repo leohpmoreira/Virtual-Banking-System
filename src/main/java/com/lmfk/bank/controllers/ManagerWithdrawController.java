@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -17,7 +18,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ApplyMoneyController implements Initializable {
+public class ManagerWithdrawController implements Initializable {
     private final Manager current = (Manager) LoginController.user;
 
     @FXML
@@ -50,7 +51,7 @@ public class ApplyMoneyController implements Initializable {
     }
 
     @FXML
-    void apply() {
+    void withdrawn() {
         double valor;
         Stage stage = (Stage) apply.getScene().getWindow();
         BankAccount account = conta.getSelectionModel().getSelectedItem();
@@ -58,7 +59,19 @@ public class ApplyMoneyController implements Initializable {
             return;
         } else {
             valor = Double.parseDouble(value.getText());
-            account.depositar(valor);
+            if (valor >= 110000) {
+                if (account.testWithdraw(valor)) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText("Sucesso");
+                    alert.setContentText("Saque realizado com sucesso");
+                    alert.showAndWait();
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText("Erro");
+                    alert.setContentText("Saque negado");
+                    alert.showAndWait();
+                }
+            }
             stage.close();
         }
     }

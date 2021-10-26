@@ -1,8 +1,8 @@
 package com.lmfk.bank.controllers;
 
-import com.lmfk.bank.BankAccount;
-import com.lmfk.bank.Customer;
-import com.lmfk.bank.Manager;
+import com.lmfk.bank.service.BankAccount;
+import com.lmfk.bank.service.Customer;
+import com.lmfk.bank.service.Manager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class InfoUserController implements Initializable {
-    private Manager current = (Manager) LoginController.user;
+    private final Manager current = (Manager) LoginController.user;
 
     @FXML
     private ListView<BankAccount> contas;
@@ -42,7 +42,9 @@ public class InfoUserController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {loadBox();}
+    public void initialize(URL location, ResourceBundle resources) {
+        loadBox();
+    }
 
     void loadBox() {
         ObservableList<Customer> obsCli = FXCollections.observableList(current.customersOwned());

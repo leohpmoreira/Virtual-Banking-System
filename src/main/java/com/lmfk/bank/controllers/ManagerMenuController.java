@@ -18,17 +18,17 @@ public class ManagerMenuController {
 
     @FXML
     void infoUser() throws IOException {
-        loadScene("/InfoUser.fxml");
+        loadScene("/User/InfoUser.fxml");
     }
 
     @FXML
     void infoConta() throws IOException {
-        loadScene("/infoConta.fxml");
+        loadScene("/User/infoConta.fxml");
     }
 
     @FXML
     void applyMoney() throws IOException {
-        loadScene("/ApplyMoney.fxml");
+        loadScene("/User/ApplyMoney.fxml");
     }
 
     @FXML

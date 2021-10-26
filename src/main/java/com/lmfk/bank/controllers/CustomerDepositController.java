@@ -1,7 +1,7 @@
 package com.lmfk.bank.controllers;
 
-import com.lmfk.bank.BankAccount;
-import com.lmfk.bank.Customer;
+import com.lmfk.bank.service.BankAccount;
+import com.lmfk.bank.service.Customer;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;

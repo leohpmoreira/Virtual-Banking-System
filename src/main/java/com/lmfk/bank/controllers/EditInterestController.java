@@ -1,6 +1,6 @@
 package com.lmfk.bank.controllers;
 
-import com.lmfk.bank.SavingsAccount;
+import com.lmfk.bank.service.SavingsAccount;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EditInterestController implements Initializable {
-    private SavingsAccount current = (SavingsAccount) ManagerInfoUserController.userAcc;
+    private final SavingsAccount current = (SavingsAccount) ManagerInfoUserController.userAcc;
 
     @FXML
     private Button okButton;

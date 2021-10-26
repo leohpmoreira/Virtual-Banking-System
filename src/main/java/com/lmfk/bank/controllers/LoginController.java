@@ -2,14 +2,16 @@ package com.lmfk.bank.controllers;
 
 
 import com.lmfk.bank.Main;
-import com.lmfk.bank.User;
+import com.lmfk.bank.service.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.*;
+import java.io.IOException;
 
 public class LoginController {
     private Stage stage;
@@ -33,9 +35,9 @@ public class LoginController {
             }
         }
         Stage atual = (Stage) loginButton.getScene().getWindow();
-        if(Main.currentUser != null){
+        if (Main.currentUser != null) {
             if (Main.currentUser.getType().equals("Cliente")) {
-                this.user = Main.currentUser;
+                user = Main.currentUser;
                 FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/Customer/CustomerMenu.fxml"));
                 Stage stage = new Stage();
                 Scene scene = new Scene(loader.load());
@@ -43,7 +45,7 @@ public class LoginController {
                 stage.show();
             } else {
                 if (Main.currentUser.getType().equals("Gerente")) {
-                    this.user = Main.currentUser;
+                    user = Main.currentUser;
                     FXMLLoader loader = new FXMLLoader(LoginController.class.getResource("/Manager/ManagerMenu.fxml"));
                     Stage stage = new Stage();
                     Scene scene = new Scene(loader.load());
